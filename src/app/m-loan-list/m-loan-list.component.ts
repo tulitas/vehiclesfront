@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Mloan} from '../models/mloan';
 import {MLoanService} from '../services/mLoanService/m-loan.service';
@@ -11,18 +11,21 @@ import {Router} from '@angular/router';
 })
 export class MLoanListComponent implements OnInit {
   mloans: Observable<Mloan[]>;
+
   constructor(private mloanService: MLoanService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   // tslint:disable-next-line:typedef
-  ngOnInit(){
-this.reloadData();
+  ngOnInit() {
+    this.reloadData();
   }
 
   // tslint:disable-next-line:typedef
   private reloadData() {
-  this.mloans = this.mloanService.getMLoansList();
+    this.mloans = this.mloanService.getMLoansList();
   }
+
   // tslint:disable-next-line:typedef
   deleteMloan(id: number) {
     this.mloanService.deleteMLoan(id)
@@ -33,8 +36,9 @@ this.reloadData();
         },
         error => console.log(error));
   }
+
   // tslint:disable-next-line:typedef
-  mLoanDetails(id: number){
+  mLoanDetails(id: number) {
     this.router.navigate(['details', id]);
   }
 }

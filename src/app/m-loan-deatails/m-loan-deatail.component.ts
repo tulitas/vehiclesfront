@@ -27,7 +27,7 @@ export class MLoanDeatailComponent implements OnInit {
       }, error => console.log(error));
   }
   list(){
-    this.router.navigate(['mloan']);
+    this.router.navigate(['mloans']);
   }
 
 }

@@ -8,7 +8,9 @@ import { UpdateMLoanComponent } from './update-mloan/update-mloan.component';
 import {FormsModule} from '@angular/forms';
 import {MLoanDeatailComponent} from './m-loan-deatails/m-loan-deatail.component';
 import {CreateMLoanComponent} from './create-m-loan/create-m-loan.component';
-import { RouterModule, Routes } from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+// import { RouterModule, Routes } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +21,10 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([])
+    // RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
