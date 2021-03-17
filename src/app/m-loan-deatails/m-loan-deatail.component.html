@@ -1,0 +1,18 @@
+<h2>Employee Details</h2>
+
+<hr/>
+<div *ngIf="mLoan">
+  <div>
+    <label><b>ID: </b></label> {{mLoan.id}}
+  </div>
+  <div>
+    <label><b>account_no: </b></label> {{mLoan.account_no}}
+  </div>
+  <div>
+    <label><b>disbursedon_date: </b></label> {{mLoan.disbursedon_date}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to MLoan List</button><br>
