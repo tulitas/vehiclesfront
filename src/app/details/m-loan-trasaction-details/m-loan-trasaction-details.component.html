@@ -1,0 +1,25 @@
+<h2>Transaction Details</h2>
+
+<hr/>
+<div *ngIf="mLoanTransaction">
+  <div>
+    <label><b>ID: </b></label> {{mLoanTransaction.id}}
+  </div>
+  <div>
+    <label><b>loan_id: </b></label> {{mLoanTransaction.loan_id}}
+  </div>
+  <div>
+    <label><b>amount: </b></label> {{mLoanTransaction.amount}}
+  </div>
+  <div>
+    <label><b>transaction_date: </b></label> {{mLoanTransaction.transaction_date}}
+  </div>
+  <div>
+    <label><b>is_resrved: </b></label> {{mLoanTransaction.is_resrved}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Transactions List</button><br>
+

@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Transactions List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Loan Id</th>
+        <th>is_resrved</th>
+        <th>transaction_date</th>
+        <th>amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let transactions of mloanTransactions | async">
+        <td>{{transactions.loan_id}}</td>
+        <td>{{transactions.is_resrved}}</td>
+        <td>{{transactions.transaction_date}}</td>
+        <td>{{transactions.amount}}</td>
+        <td><button (click)="deleteTransaction(transactions.id)" class="btn btn-danger">Delete</button>
+          <button (click)="transactionDetails(transactions.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

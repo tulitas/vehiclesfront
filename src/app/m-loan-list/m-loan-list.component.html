@@ -1,19 +1,17 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>Employee List</h2>
+    <h2>MLoan List</h2>
   </div>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>Id</th>
         <th>account_no</th>
         <th>disbursedon_date</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let mloan of mloans | async">
-        <td>{{mloan.id}}</td>
         <td>{{mloan.account_no}}</td>
         <td>{{mloan.disbursedon_date}}</td>
         <td><button (click)="deleteMloan(mloan.id)" class="btn btn-danger">Delete</button>

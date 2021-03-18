@@ -2,13 +2,13 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">First Name</label>
+      <label for="name">account_no</label>
       <input type="text" class="form-control" id="account_no" required [(ngModel)]="mloan.account_no" name="account_no">
     </div>
 
     <div class="form-group">
-      <label for="name">Last Name</label>
-      <input type="data" class="form-control" id="lastName" required [(ngModel)]="mloan.disbursedon_date" name="disbursedon_date">
+      <label for="name">disbursedon_date</label>
+      <input type="date" class="form-control" id="lastName" required [(ngModel)]="mloan.disbursedon_date" name="disbursedon_date">
     </div>
 
 

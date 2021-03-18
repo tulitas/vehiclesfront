@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Mloan} from '../models/mloan';
-import {MLoanService} from '../services/mLoanService/m-loan.service';
+import {Mloan} from '../../models/mloan';
+import {MLoanService} from '../../services/mLoanService/m-loan.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -22,7 +22,7 @@ export class MLoanDeatailComponent implements OnInit {
 
     this.mLoanService.getMLoan(this.id)
       .subscribe(data => {
-        console.log(data)
+        console.log(data);
         this.mLoan = data;
       }, error => console.log(error));
   }
