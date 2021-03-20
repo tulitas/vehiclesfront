@@ -3,6 +3,8 @@ import {MLoanTransaction} from '../../models/mLoanTransaction';
 import {MLoanTransactionListService} from '../../services/mLoanTransactionService/m-loan-transaction-list.service';
 import {Router} from '@angular/router';
 import {Mloan} from '../../models/mloan';
+import {Observable} from 'rxjs';
+import {MLoanService} from '../../services/mLoanService/m-loan.service';
 
 @Component({
   selector: 'app-m-loan-trasaction-create',
@@ -11,12 +13,16 @@ import {Mloan} from '../../models/mloan';
 })
 export class MLoanTrasactionCreateComponent implements OnInit {
   mLoanTransaction: MLoanTransaction = new MLoanTransaction();
+  mLoan: Mloan = new Mloan();
+  mloanId: Observable<Mloan[]>;
   submitted = false;
 
   constructor(private mLoanTransactionService: MLoanTransactionListService,
+              private mloanService: MLoanService,
               private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.reloadData();
   }
   newTransaction(): void{
     this.submitted = false;
@@ -41,5 +47,9 @@ export class MLoanTrasactionCreateComponent implements OnInit {
   private gotoList() {
     this.router.navigate(['/mloan']);
 
+  }
+  private reloadData() {
+    this.mLoan = new Mloan();
+    this.mloanId = this.mloanService.getMLoansList();
   }
 }

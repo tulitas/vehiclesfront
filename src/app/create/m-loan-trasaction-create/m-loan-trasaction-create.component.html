@@ -13,11 +13,14 @@
       <label for="name">amount</label>
       <input type="text" class="form-control" id="amount" required [(ngModel)]="mLoanTransaction.amount" name="amount">
     </div>
-    <div class="form-group">
-      <label for="name">Loan Id</label>
-      <input type="text" class="form-control" id="loan_id" required [(ngModel)]="mLoanTransaction.loan_id" name="loan_id">
-    </div>
-
+<!--    <div class="form-group">-->
+<!--      <label for="name">Loan Id</label>-->
+<!--      <input type="text" class="form-control" id="loan_id" required [(ngModel)]="mLoanTransaction.loan_id" name="loan_id">-->
+<!--    </div>-->
+    <label for="loan_id" >Select MLoan ID</label>
+    <select class="form-control" name="loan_id" required [(ngModel)]="mLoanTransaction.loan_id">
+      <option *ngFor="let mloanid of mloanId | async" value="{{mloanid.id}}" id="loan_id">{{mloanid.id}}</option>
+    </select>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>

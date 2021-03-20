@@ -1,0 +1,33 @@
+<h2>Repayment Details</h2>
+
+<hr/>
+<div *ngIf="mLoanRepayments">
+  <div>
+    <label><b>ID: </b></label> {{mLoanRepayments.id}}
+  </div>
+  <div>
+    <label><b>Loan Id: </b></label> {{mLoanRepayments.loan_id}}
+  </div>
+  <div>
+    <label><b>Due Date: </b></label> {{mLoanRepayments.duedate}}
+  </div>
+  <div>
+    <label><b>Completed Derived: </b></label> {{mLoanRepayments.completed_derived}}
+  </div>
+  <div>
+    <label><b>Penalty Charges Amount: </b></label> {{mLoanRepayments.penalty_charges_amount}}
+  </div>
+  <div>
+    <label><b>Fee Charges Amount: </b></label> {{mLoanRepayments.fee_charges_amount}}
+  </div>
+  <div>
+    <label><b>Interest Amount: </b></label> {{mLoanRepayments.interest_amount}}
+  </div>
+  <div>
+    <label><b>Principal Amount: </b></label> {{mLoanRepayments.principal_amount}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Repayments List</button><br>

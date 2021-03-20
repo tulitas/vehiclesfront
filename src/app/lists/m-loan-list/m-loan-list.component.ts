@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Mloan} from '../models/mloan';
-import {MLoanService} from '../services/mLoanService/m-loan.service';
+import {Mloan} from '../../models/mloan';
+import {MLoanService} from '../../services/mLoanService/m-loan.service';
 import {Router} from '@angular/router';
 
 @Component({

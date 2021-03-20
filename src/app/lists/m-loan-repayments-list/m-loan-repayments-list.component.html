@@ -1,0 +1,35 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Repayments List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped" style="font-size: 12px">
+      <thead>
+      <tr>
+        <th>Loan Id</th>
+        <th>Due Date</th>
+        <th>Principal Amount</th>
+        <th>Interest Amount</th>
+        <th>Fee Charges Amount</th>
+        <th>Penalty Charges Amount</th>
+        <th>Completed Derived</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let repayment of mloansRepayments | async">
+        <td>{{repayment.loan_id}}</td>
+        <td>{{repayment.duedate}}</td>
+        <td>{{repayment.principal_amount}}</td>
+        <td>{{repayment.interest_amount}}</td>
+        <td>{{repayment.fee_charges_amount}}</td>
+        <td>{{repayment.penalty_charges_amount}}</td>
+        <td>{{repayment.completed_derived}}</td>
+        <td><button (click)="deleteMloan(repayment.id)" class="btn btn-danger">Delete</button>
+          <button (click)="mLoanRepaymentDetails(repayment.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

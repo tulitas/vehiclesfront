@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {MLoanTransactionListService} from '../services/mLoanTransactionService/m-loan-transaction-list.service';
+import {MLoanTransactionListService} from '../../services/mLoanTransactionService/m-loan-transaction-list.service';
 import {Router} from '@angular/router';
-import {MLoanTransaction} from '../models/mLoanTransaction';
+import {MLoanTransaction} from '../../models/mLoanTransaction';
 
 @Component({
   selector: 'app-m-loan-trasaction-list',

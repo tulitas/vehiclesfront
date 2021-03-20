@@ -1,0 +1,48 @@
+<h3>Create Repayment</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <label for="loan_id" >Select MLoan ID</label>
+      <select class="form-control" name="loan_id" required [(ngModel)]="mloanRepayment.loan_id">
+        <option *ngFor="let mloanid of mloanId | async" value="{{mloanid.id}}" id="loan_id">{{mloanid.id}}</option>
+      </select>
+
+    <div class="form-group">
+      <label for="duedate">duedate</label>
+      <input type="date" class="form-control" id="duedate" required [(ngModel)]="mloanRepayment.duedate" name="duedate">
+    </div>
+
+    <div class="form-group">
+      <label for="principal_amount">principal_amount, only digits</label>
+      <input type="number" class="form-control" id="principal_amount" required [(ngModel)]="mloanRepayment.principal_amount" name="principal_amount">
+    </div>
+
+    <div class="form-group">
+      <label for="interest_amount">interest_amount, only digits</label>
+      <input type="number" class="form-control" id="interest_amount" required [(ngModel)]="mloanRepayment.interest_amount" name="interest_amount">
+    </div>
+
+    <div class="form-group">
+      <label for="fee_charges_amount">fee_charges_amount, only digits</label>
+      <input type="number" class="form-control" id="fee_charges_amount" required [(ngModel)]="mloanRepayment.fee_charges_amount" name="fee_charges_amount">
+    </div>
+
+    <div class="form-group">
+      <label for="penalty_charges_amount">penalty_charges_amount, only digits</label>
+      <input type="number" class="form-control" id="penalty_charges_amount" required [(ngModel)]="mloanRepayment.penalty_charges_amount" name="penalty_charges_amount">
+    </div>
+
+    <div class="form-group" hidden>
+      <label for="completed_derived">completed_derived, only digits</label>
+      <input type="number" class="form-control" id="completed_derived" required [(ngModel)]="mloanRepayment.completed_derived" name="completed_derived" value="0">
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
