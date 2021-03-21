@@ -11,6 +11,7 @@ import {MLoanTrasactionDetailsComponent} from './details/m-loan-trasaction-detai
 import {MLoanRepaymentsListComponent} from './lists/m-loan-repayments-list/m-loan-repayments-list.component';
 import {MLoanRepaymentsDetailsComponent} from './details/m-loan-repayments-details/m-loan-repayments-details.component';
 import {MLoanRepaymentCreateComponent} from './create/m-loan-repayment-create/m-loan-repayment-create.component';
+import {ReportComponent} from './report/report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'mloan', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'repayments', component: MLoanRepaymentsListComponent } ,
   { path: 'repayments/:id', component: MLoanRepaymentsDetailsComponent } ,
   { path: 'addrepayment', component: MLoanRepaymentCreateComponent } ,
+  { path: 'reports', component: ReportComponent } ,
 ];
 
 @NgModule({
